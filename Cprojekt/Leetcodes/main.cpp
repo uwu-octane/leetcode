@@ -1,6 +1,8 @@
-#include <iostream>
-
+//#include <iostream>
+#include "solution.h"
+#include "Solutions/LC05.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    LC05 s = LC05();
+    std::cout << s.longestPalindrome("HelloWorld!") << std::endl;
     return 0;
 }

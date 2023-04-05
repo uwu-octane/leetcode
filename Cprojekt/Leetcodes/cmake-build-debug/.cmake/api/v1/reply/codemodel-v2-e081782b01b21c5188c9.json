@@ -6,6 +6,10 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
@@ -17,6 +21,21 @@
 					[
 						0
 					]
+				},
+				{
+					"build" : "Solutions",
+					"jsonFile" : "directory-Solutions-Debug-c88dbc5e4b9d7b8125cd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Solutions",
+					"targetIndexes" : 
+					[
+						1
+					]
 				}
 			],
 			"name" : "Debug",
@@ -25,12 +44,14 @@
 				{
 					"directoryIndexes" : 
 					[
-						0
+						0,
+						1
 					],
 					"name" : "Leetcodes",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +60,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Leetcodes::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Leetcodes-Debug-82318254d63c4b5bbf02.json",
+					"jsonFile" : "target-Leetcodes-Debug-ae32ffd3758e25828ac0.json",
 					"name" : "Leetcodes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SolutionsLib::@5439a195b011474811f0",
+					"jsonFile" : "target-SolutionsLib-Debug-250b3a123d41dbc40117.json",
+					"name" : "SolutionsLib",
 					"projectIndex" : 0
 				}
 			]

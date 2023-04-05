@@ -1,3 +1,6 @@
 /Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/CMakeFiles/Leetcodes.dir
+/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions/CMakeFiles/rebuild_cache.dir
+/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions/CMakeFiles/edit_cache.dir
+/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions/CMakeFiles/SolutionsLib.dir

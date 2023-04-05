@@ -1,0 +1,11 @@
+# ninja log v5
+0	44	1680698209734378814	build.ninja	62b4cd4d32c47166
+0	5	0	clean	3c8e6cc385ee00ba
+1	221	1680697974296370494	CMakeFiles/Leetcodes.dir/main.cpp.o	a51f44f34c9d73a7
+2	221	1680697974296437327	Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o	26315f8cf2a9b68e
+221	240	1680697974317824000	Solutions/libSolutionsLib.a	8b320d85e576390e
+0	9	0	clean	3c8e6cc385ee00ba
+2	389	1680698224901516676	CMakeFiles/Leetcodes.dir/main.cpp.o	ebf5c9dbf6c7ee3
+3	391	1680698224901549426	Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o	ba340672ab9e3468
+391	410	1680698224925947000	Solutions/libSolutionsLib.a	8b320d85e576390e
+410	454	1680698224969643859	Leetcodes	2b2904ef2d7c39fa

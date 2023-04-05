@@ -8,7 +8,7 @@
 
 class solution {
 public:
-    virtual void getSolution(int index_problem) = 0;
+    virtual void getSolution() = 0;
 };
 
 

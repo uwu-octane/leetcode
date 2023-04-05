@@ -205,13 +205,22 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Leetcodes_BINARY_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug
+Leetcodes_BINARY_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions
 
 //Value Computed by CMake
-Leetcodes_IS_TOP_LEVEL:STATIC=ON
+Leetcodes_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-Leetcodes_SOURCE_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes
+Leetcodes_SOURCE_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes/Solutions
+
+//Value Computed by CMake
+Solutions_BINARY_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions
+
+//Value Computed by CMake
+Solutions_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Solutions_SOURCE_DIR:STATIC=/Users/taoting/Cprojekt/Leetcodes/Solutions
 
 
 ########################

@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1087,7 +1087,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug"
+			"value" : "/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions"
 		},
 		{
 			"name" : "Leetcodes_IS_TOP_LEVEL",
@@ -1099,7 +1099,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "Leetcodes_SOURCE_DIR",
@@ -1111,7 +1111,43 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/taoting/Cprojekt/Leetcodes"
+			"value" : "/Users/taoting/Cprojekt/Leetcodes/Solutions"
+		},
+		{
+			"name" : "Solutions_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/Solutions"
+		},
+		{
+			"name" : "Solutions_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "Solutions_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/taoting/Cprojekt/Leetcodes/Solutions"
 		}
 	],
 	"kind" : "cache",

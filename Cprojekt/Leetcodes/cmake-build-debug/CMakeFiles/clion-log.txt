@@ -10,14 +10,6 @@ Call Stack (most recent call first):
   CMakeLists.txt:2 (project)
 
 
-CMake Error at CMakeLists.txt:5 (add_subdirectory):
-  The source directory
-
-    /Users/taoting/Cprojekt/Leetcodes/Solutions
-
-  does not contain a CMakeLists.txt file.
-
-
--- Configuring incomplete, errors occurred!
-See also "/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "/Users/taoting/Cprojekt/Leetcodes/cmake-build-debug/CMakeFiles/CMakeError.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/taoting/Cprojekt/Leetcodes/cmake-build-debug
