@@ -141,6 +141,13 @@ build Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o: CXX_COMPILER__SolutionsL
   OBJECT_DIR = Solutions/CMakeFiles/SolutionsLib.dir
   OBJECT_FILE_DIR = Solutions/CMakeFiles/SolutionsLib.dir
 
+build Solutions/CMakeFiles/SolutionsLib.dir/LC06.cpp.o: CXX_COMPILER__SolutionsLib_Debug /Users/taoting/Cprojekt/Leetcodes/Solutions/LC06.cpp || cmake_object_order_depends_target_SolutionsLib
+  DEP_FILE = Solutions/CMakeFiles/SolutionsLib.dir/LC06.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -std=gnu++17
+  INCLUDES = -I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include
+  OBJECT_DIR = Solutions/CMakeFiles/SolutionsLib.dir
+  OBJECT_FILE_DIR = Solutions/CMakeFiles/SolutionsLib.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target SolutionsLib
@@ -149,7 +156,7 @@ build Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o: CXX_COMPILER__SolutionsL
 #############################################
 # Link the static library Solutions/libSolutionsLib.a
 
-build Solutions/libSolutionsLib.a: CXX_STATIC_LIBRARY_LINKER__SolutionsLib_Debug Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o
+build Solutions/libSolutionsLib.a: CXX_STATIC_LIBRARY_LINKER__SolutionsLib_Debug Solutions/CMakeFiles/SolutionsLib.dir/LC05.cpp.o Solutions/CMakeFiles/SolutionsLib.dir/LC06.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Solutions/CMakeFiles/SolutionsLib.dir

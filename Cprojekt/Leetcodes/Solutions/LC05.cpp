@@ -27,5 +27,5 @@ std::string LC05::longestPalindrome(std::string s) {
                 }
             }
         }
-        return substr;
+        return "failed";
 }

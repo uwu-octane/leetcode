@@ -1,8 +1,9 @@
 //#include <iostream>
 #include "solution.h"
-#include "Solutions/LC05.h"
+#include "Solutions/LC06.h"
+#include <iostream>
 int main() {
-    LC05 s = LC05();
-    std::cout << s.longestPalindrome("HelloWorld!") << std::endl;
+    LC06 s = LC06();
+    std::cout << s.convert("PAYPALISHIRING",3) << std::endl;
     return 0;
 }
