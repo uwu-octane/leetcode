@@ -1,9 +1,13 @@
 //#include <iostream>
-#include "solution.h"
-#include "Solutions/LC06.h"
+#include "Solutions/solution.h"
 #include <iostream>
+#include <bitset>
 int main() {
-    LC06 s = LC06();
-    std::cout << s.convert("PAYPALISHIRING",3) << std::endl;
+    solution solution;
+    //solution.reverse();
+    int i = 8;
+    std::bitset<sizeof(i)* 8> bits(i);
+    //std::cout << solution.LC07_reverse(1534236469) << std::endl;
+    std::cout << INT_MIN;
     return 0;
 }

@@ -6,11 +6,10 @@
 
 //
 #include <vector>
-#include "../solution.h"
 #include <iostream>
 #include <algorithm>
 
-class LC04: solution {
+class LC04 {
 public:
     //binary search
     double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2){

@@ -8,7 +8,8 @@
 
 class solution {
 public:
-    virtual void getSolution() = 0;
+int LC07_reverse(int x);
+int LC07_reverse_modified(int x);
 };
 
 
