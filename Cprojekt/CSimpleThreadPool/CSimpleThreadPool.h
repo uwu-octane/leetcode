@@ -39,14 +39,18 @@ struct ThreadPool{
 typedef struct ThreadPool ThreadPool;
 //creat and init threadpool
 ThreadPool *init_ThreadPool(int minThreadsNum, int maxThreadsNum, int queueCapacity);
+
 //destruct threadspool
+int threadPoolDestroy(ThreadPool* pool);
 
 //add task into the pool
+void threadPoolAdd(ThreadPool* pool, void(*func)(void*), void* arg);
 
 // get wroking threads num from the pool
+int getBusyThreadNum(ThreadPool* pool);
 
 // get alive threads num from the pool
-
+int getLivingThreadNum(ThreadPool* pool);
 
 _Noreturn void* worker(void* arg);
 void* manager(void* arg);

@@ -4,7 +4,7 @@
 
 #include <printf.h>
 #include <string.h>
-#include <libc.h>
+#include <unistd.h>
 #include "CSimpleThreadPool.h"
 
 const int  NUMBER = 2;
@@ -75,7 +75,7 @@ ThreadPool *init_ThreadPool(int minThreadsNum, int maxThreadsNum, int queueCapac
     return NULL;
 }
 
-_Noreturn void* worker(void* arg){
+ void* worker(void* arg){
     //cast arg to pool
     ThreadPool* pool = (ThreadPool*) arg;
     while(1){
@@ -118,11 +118,14 @@ _Noreturn void* worker(void* arg){
         pool->queueFront = (pool->queueFront + 1) % pool->queueCapacity;
         pool->queueSize--;
 
+        // wake thread to add task
+        pthread_cond_signal(&pool->isFull);
+
         pthread_mutex_unlock(&pool->poolMutex);
 
         //busy thread couting
         pthread_mutex_lock(&pool->workingThreadsNumMutex);
-        printf("thread %ld start working..\n");
+        printf("thread %ld start working..\n", pthread_self());
         pool->workingThreadsNum++;
         pthread_mutex_unlock(&pool->workingThreadsNumMutex);
 
@@ -134,7 +137,7 @@ _Noreturn void* worker(void* arg){
 
         //busy thread couting
         pthread_mutex_lock(&pool->workingThreadsNumMutex);
-        printf("thread %ld end working..\n");
+        printf("thread %ld end working..\n",pthread_self());
         pool->workingThreadsNum--;
         pthread_mutex_unlock(&pool->workingThreadsNumMutex);
 
@@ -162,6 +165,7 @@ void* manager(void* arg){
             for(int i = 0; i < pool->maxThreadsNum && counter < NUMBER && pool->liveThreadsNum < pool->maxThreadsNum; ++i){
                 if(pool->threadIDs[i] == 0){
                     pthread_create(&pool->threadIDs[i], NULL,worker,pool);
+                    printf("add Thread");
                     counter++;
                     pool->liveThreadsNum++;
                 }
@@ -199,4 +203,83 @@ void threadExit(ThreadPool* pool){
         }
         pthread_exit(NULL);
     }
+}
+
+void threadPoolAdd(ThreadPool* pool, void(*func)(void*), void* arg){
+    pthread_mutex_lock(&pool->poolMutex);
+    while(pool->queueSize == pool->queueCapacity && !pool->shutdown){
+        //pool full
+        pthread_cond_wait(&pool->isFull, &pool->poolMutex);
+
+
+    }
+    //is pool still alive
+    if(pool->shutdown){
+        pthread_mutex_unlock(&pool->poolMutex);
+        return;
+    }
+
+    //add task
+    pool->taskQueue[pool->queueRear].function = func;
+    pool->taskQueue[pool->queueRear].arg = arg;
+
+    //move queueRead
+    pool->queueRear = (pool->queueRear + 1) % pool->queueCapacity;
+    pool->queueSize++;
+
+    //wake the waiting threads
+    pthread_cond_signal(&pool->isEmpty);
+
+    pthread_mutex_unlock(&pool->poolMutex);
+}
+
+int getBusyThreadNum(ThreadPool* pool){
+    pthread_mutex_lock(&pool->poolMutex);
+    int busyNum = pool->workingThreadsNum;
+    pthread_mutex_unlock(&pool->poolMutex);
+
+    return busyNum;
+}
+
+int getLivingThreadNum(ThreadPool* pool){
+    pthread_mutex_lock(&pool->poolMutex);
+    int livingNum = pool->liveThreadsNum;
+    pthread_mutex_unlock(&pool->poolMutex);
+
+    return livingNum;
+}
+
+int threadPoolDestroy(ThreadPool* pool){
+    if(!pool){
+        return -1;
+    }
+
+    pool->shutdown = 1;
+
+    //free manager
+    pthread_join(pool->managerID,NULL);
+
+    //wake waiting threads
+    for(int i = 0; i < pool->liveThreadsNum; ++i){
+        pthread_cond_signal(&pool->isEmpty);
+    }
+
+    //free
+    if(pool->taskQueue){
+        free(pool->taskQueue);
+        pool->taskQueue = NULL;
+    }
+    if(pool->threadIDs){
+        free(pool->threadIDs);
+        pool->threadIDs = NULL;
+    }
+
+    pthread_mutex_destroy(&pool->poolMutex);
+    pthread_mutex_destroy(&pool->workingThreadsNumMutex);
+    pthread_cond_destroy(&pool->isEmpty);
+    pthread_cond_destroy(&pool->isFull);
+
+    free(pool);
+    pool =  NULL;
+    return 0;
 }
